@@ -1,0 +1,82 @@
+.search1{
+    position: relative;
+    height: 100px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.search1 .search_btn{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: var(--shadow1);
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.7s ease;
+}
+/* Create search icon */
+.search1 .search_btn::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 2px;
+    background-color: #fff;
+    transform: translate(3px, 8px) rotate(45deg);
+    transition: all .5s ease;
+}
+.search1 .search_btn::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    transform: translate(-14px, -14px);
+    transition: all .5s ease;
+}
+.search1 input{
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    color: #fff;
+    padding: 0 20px;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+    transition: width .7s ease, opacity .5s ease;
+}
+.search1 input::placeholder{
+    color: #fff;
+}
+.search1 input:focus{
+    width: 350px;
+    opacity: 1;
+    cursor: text;
+}
+.search1 input:focus ~ .search_btn{
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    z-index: 3;
+}
+.search1 input:focus ~ .search_btn::before{
+    background-color: #000;
+    width: 25px;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.search1 input:focus ~ .search_btn::after{
+    width: 25px;
+    height: 2px;
+    background-color: #000;
+    border: none;
+    border-radius: 0;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}

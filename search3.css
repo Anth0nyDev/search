@@ -1,0 +1,46 @@
+.search3{
+    background-color: #fff;
+    height: 60px;
+    min-width: 60px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: var(--shadow1);
+}
+
+.search3 .search_btn{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    transition: width .5s .5s ease, height .5s .5s ease, margin-right .2s 0s ease;
+}
+.search3:hover .search_btn,
+.search3 input:focus ~ .search_btn,
+.search3 input:valid ~ .search_btn{
+    margin-right: 5px;
+    width: 46px;
+    height: 46px;
+    transition: width .5s .5s ease, height .5s .5s ease, margin-right .5s .5s ease;
+}
+.search3 input{
+    width: 0;
+    padding: 0;
+    transition: all .5s ease;
+}
+.search3:hover > input,
+.search3 input:focus,
+.search3 input:valid{
+    width: 350px;
+    padding-left: 20px;
+}
+.search3 input::placeholder{
+    color: var(--primary-color);
+}
